@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Games Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Fondo con temática de videojuegos retro */
+    .bg-retro {
+      background: url('https://i.pinimg.com/736x/36/ba/71/36ba7162d33e7fdbf7308ace337dae1f.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 bg-retro flex justify-center items-center min-h-screen">
+  <!-- Añade esto dentro del body de index.html y también en retro_redescubre.html -->
+  <nav class="bg-black bg-opacity-80 p-4 fixed top-0 w-full z-10">
+    <ul class="flex justify-center space-x-8 text-white text-lg">
+      <li><a href="index.html" class="hover:text-yellow-400">Inicio</a></li>
+      <li><a href="retro_redescubre.html" class="hover:text-yellow-400">Retro</a></li>
+      <li><a href="#servicios" class="hover:text-yellow-400">Servicios</a></li>
+      <li><a href="#acerca-de" class="hover:text-yellow-400">Acerca de</a></li>
+    </ul>
+  </nav>
+
+<!-- Luego agrega esto al principio del body para que no tape el contenido -->
+<div class="h-16"></div>
+
+  <div class="text-center px-6 py-10 sm:px-12 lg:px-20 max-w-4xl w-full bg-black bg-opacity-70 rounded-lg shadow-lg">
+
+    <!-- Título -->
+    <h1 class="text-5xl font-extrabold text-yellow-400 tracking-wide mb-6">
+      Retro Games Hub: La Cuna de los Videojuegos Clásicos
+    </h1>
+
+    <!-- Introducción -->
+    <p class="text-xl text-white mb-6 max-w-2xl mx-auto">
+      Bienvenido a Retro Games Hub, el lugar donde revivimos los mejores videojuegos clásicos. Desde las consolas más icónicas hasta los títulos que definieron generaciones, aquí encontrarás todo sobre el mundo de los videojuegos retro, con reseñas, recomendaciones y mucho más.
+    </p>
+
+    <!-- Botón de llamada a la acción -->
+    <a href="retro_redescubre.html" class="inline-block bg-yellow-600 text-white text-xl font-bold py-3 px-6 rounded-full shadow-lg hover:bg-yellow-700 transition duration-300 transform hover:scale-105 mb-8">
+      Redescubre los juegos de antaño
+    </a>
+
+    <!-- Sección "Acerca de" -->
+    <div id="acerca-de" class="mt-12 bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-3xl font-semibold text-yellow-500 mb-4">Acerca de Retro Games Hub</h2>
+      <p class="text-lg text-white">
+        Retro Games Hub es el espacio donde celebramos la historia de los videojuegos. Desde las primeras consolas hasta los títulos más emblemáticos de la era dorada de los videojuegos, aquí exploramos todo lo que hace grande al gaming clásico. Si eres un verdadero fanático de lo retro, este es tu refugio.
+      </p>
+    </div>
+
+<!-- Sección de Servicios -->
+<div id="servicios" class="mt-12">
+  <h2 class="text-3xl font-semibold text-yellow-500 mb-4">Nuestros Servicios</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+    <!-- Servicio 1 -->
+    <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+      <h3 class="text-xl font-bold text-yellow-500 mb-3">Reseñas de Juegos Retro</h3>
+      <p class="text-white mb-3">Revive los mejores títulos de los 80s y 90s con nuestras reseñas detalladas. ¡Descubre qué juegos son los más memorables y cuáles te harán sentir nostalgia!</p>
+      <a href="retro_reseñas.html" class="inline-block mt-3 bg-yellow-600 text-white px-4 py-2 rounded-full font-bold shadow hover:bg-yellow-700 transition duration-300">
+        Ver Reseñas
+     </a>
+    </div>
+    <!-- Servicio 2 -->
+    <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+      <h3 class="text-xl font-bold text-yellow-500 mb-3">Juegos Retro Recomendados</h3>
+      <p class="text-white mb-3">Explora nuestra lista de los juegos retro más recomendados. ¡Desde plataformas, arcades hasta RPGs que marcaron una época dorada!</p>
+      <a href="retro_recomendados.html" class="inline-block mt-3 bg-yellow-600 text-white px-4 py-2 rounded-full font-bold shadow hover:bg-yellow-700 transition duration-300">
+        Ver Recomendados
+      </a>
+    </div>
+    <!-- Servicio 3 -->
+    <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+      <h3 class="text-xl font-bold text-yellow-500 mb-3">Consultas sobre Desarrollo Retro</h3>
+      <p class="text-white mb-3">Si eres un desarrollador y te interesa crear juegos retro, agenda una consulta sobre cómo adaptar y desarrollar juegos con una estética vintage.</p>
+      <a href="retro_desarrollo.html" class="inline-block mt-3 bg-yellow-600 text-white px-4 py-2 rounded-full font-bold shadow hover:bg-yellow-700 transition duration-300">
+        Más sobre Desarrollo
+      </a>
+    </div>
+    <!-- Servicio 4 (Nuevo) -->
+    <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+      <h3 class="text-xl font-bold text-yellow-500 mb-3">Coleccionismo de Consolas Retro</h3>
+      <p class="text-white mb-3">Si eres un coleccionista, te ofrecemos asesoramiento sobre cómo encontrar, conservar y restaurar consolas retro. ¡Trae a la vida esas joyas clásicas!</p>
+      <a href="retro_coleccionismo.html" class="inline-block mt-3 bg-yellow-600 text-white px-4 py-2 rounded-full font-bold shadow hover:bg-yellow-700 transition duration-300">
+        Explorar Coleccionismo
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Pie de página -->
+<footer class="mt-12 text-white text-sm">
+  <p>&copy; Retro Games Hub. Página realizada por Martín Hernández Rodríguez.</p>
+</footer>
+
+</div>
+</body>
+</html>
+
+	

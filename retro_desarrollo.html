@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desarrollo de Juegos Retro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glitch-text {
+      color: #fff;
+      position: relative;
+      font-weight: bold;
+    }
+    .glitch-text::before,
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      color: #facc15;
+      z-index: -1;
+    }
+    .glitch-text::before {
+      left: 2px;
+      text-shadow: -2px 0 red;
+    }
+    .glitch-text::after {
+      left: -2px;
+      text-shadow: -2px 0 cyan;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans px-6 py-10">
+  <header class="text-center mb-12">
+    <h1 class="text-5xl glitch-text" data-text="🕹️ Desarrollo de Juegos Retro">🕹️ Desarrollo de Juegos Retro</h1>
+    <p class="text-xl text-gray-300 mt-2">Aprende cómo crear videojuegos con alma clásica en la era moderna.</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto space-y-12">
+    <!-- Introducción -->
+    <section>
+      <h2 class="text-3xl font-bold text-yellow-400 mb-4">¿Qué hace retro a un juego?</h2>
+      <p class="text-gray-200">No se trata solo de gráficos pixelados. Un juego retro es compacto, directo, desafiante y se apoya en una mecánica bien pulida. Requiere creatividad y limitaciones técnicas bien usadas.</p>
+    </section>
+
+    <!-- Herramientas recomendadas -->
+    <section>
+      <h2 class="text-3xl font-bold text-pink-400 mb-4">🛠️ Herramientas para empezar</h2>
+      <ul class="list-disc list-inside text-gray-200 space-y-2">
+        <li><strong><a href="https://www.lexaloffle.com/pico-8.php" target="_blank" class="text-yellow-300 hover:underline">PICO-8</a>:</strong> Consola de fantasía ideal para crear juegos en estilo 8-bit.</li>
+        <li><strong><a href="https://godotengine.org/" target="_blank" class="text-yellow-300 hover:underline">Godot</a>:</strong> Motor open-source muy versátil con soporte para 2D retro.</li>
+        <li><strong><a href="https://ledoux.itch.io/bitsy" target="_blank" class="text-yellow-300 hover:underline">Bitsy</a>:</strong> Herramienta visual para juegos narrativos simples tipo Game Boy.</li>
+        <li><strong><a href="https://www.mapeditor.org/" target="_blank" class="text-yellow-300 hover:underline">Tiled</a>:</strong> Editor de mapas pixelados para plataformas y aventuras.</li>
+      </ul>
+    </section>
+
+    <!-- Consejos de diseño retro -->
+    <section>
+      <h2 class="text-3xl font-bold text-indigo-400 mb-4">🎨 Estilo visual retro</h2>
+      <p class="text-gray-200 mb-4">Limita tu paleta de colores. Usa píxeles grandes, tiles repetitivos y animaciones simples. No por limitado es aburrido: la coherencia visual lo es todo.</p>
+    </section>
+
+    <!-- Ejemplos inspiradores -->
+    <section>
+      <h2 class="text-3xl font-bold text-green-400 mb-4">🌟 Ejemplos actuales que inspiran</h2>
+      <ul class="list-disc list-inside text-gray-200 space-y-2">
+        <li><strong>Celeste:</strong> Plataformas precisas, estilo pixel art, música chiptune y narrativa emocional.</li>
+        <li><strong>Shovel Knight:</strong> Estética NES con mecánicas modernas.</li>
+        <li><strong>Undertale:</strong> Combina estética retro con mecánicas innovadoras y mucho humor.</li>
+        <li><strong>Katana Zero:</strong> Acción intensa en estética VHS/retro futurista.</li>
+      </ul>
+      <div class="mt-4">
+        <iframe class="w-full aspect-video rounded-lg shadow-lg" src="https://cliqist.com/wp-content/uploads/2018/08/screenshot1.png" title="Pixel Art Game Trailer" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Editor de sprites básico -->
+    <section>
+      <h2 class="text-3xl font-bold text-cyan-400 mb-4">🧱 Mini editor de sprites (8x8)</h2>
+      <canvas id="spriteCanvas" width="160" height="160" class="bg-white block mx-auto border-4 border-yellow-400 cursor-crosshair"></canvas>
+      <div class="flex justify-center space-x-4 mt-4">
+        <button onclick="clearCanvas()" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">🗑️ Borrar</button>
+        <button onclick="downloadSprite()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">💾 Descargar</button>
+      </div>
+      <p class="text-center text-sm text-gray-400 mt-2">Haz clic en los píxeles para dibujar. ¡Crea tu primer sprite retro!</p>
+    </section>
+
+    <!-- Botón de regreso -->
+    <div class="text-center pt-10">
+      <a href="index.html" class="bg-yellow-500 text-black px-6 py-3 rounded-full shadow-lg hover:bg-yellow-400 transition-all duration-300 font-bold uppercase">⬅️ Volver al Inicio</a>
+    </div>
+  </main>
+
+  <script>
+    // Mini editor de sprites 8x8
+    const canvas = document.getElementById("spriteCanvas");
+    const ctx = canvas.getContext("2d");
+    const pixelSize = 20;
+    const gridSize = 8;
+    let grid = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
+
+    canvas.addEventListener("click", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = Math.floor((e.clientX - rect.left) / pixelSize);
+      const y = Math.floor((e.clientY - rect.top) / pixelSize);
+      grid[y][x] = !grid[y][x];
+      draw();
+    });
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let y = 0; y < gridSize; y++) {
+        for (let x = 0; x < gridSize; x++) {
+          ctx.fillStyle = grid[y][x] ? "black" : "white";
+          ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+          ctx.strokeStyle = "#ddd";
+          ctx.strokeRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+        }
+      }
+    }
+
+    function clearCanvas() {
+      grid = Array.from({ length: gridSize }, () => Array(gridSize).fill(false));
+      draw();
+    }
+
+    function downloadSprite() {
+      const link = document.createElement('a');
+      link.download = 'sprite.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+
+    draw();
+  </script>
+</body>
+</html>

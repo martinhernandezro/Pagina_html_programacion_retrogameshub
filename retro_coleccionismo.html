@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coleccionismo de Consolas Retro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .crt-frame {
+      border: 6px solid #facc15;
+      box-shadow: 0 0 25px #facc15;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans px-6 py-10">
+  <header class="text-center mb-12">
+    <h1 class="text-5xl font-bold text-yellow-400 mb-2">🕹️ Coleccionismo de Consolas Retro</h1>
+    <p class="text-xl text-gray-300">Descubre el arte de coleccionar y conservar las joyas del pasado gamer.</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto space-y-12">
+    <!-- Introducción -->
+    <section>
+      <h2 class="text-3xl font-bold text-green-400 mb-4">🎯 ¿Por qué coleccionar consolas retro?</h2>
+      <p class="text-gray-200">Las consolas clásicas no solo tienen valor nostálgico. Representan hitos tecnológicos, piezas de diseño industrial y, en muchos casos, reliquias difíciles de encontrar. Coleccionar es revivir la historia del videojuego.</p>
+    </section>
+
+    <!-- Galería de consolas -->
+    <section>
+      <h2 class="text-3xl font-bold text-pink-400 mb-4">📸 Galería destacada</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="crt-frame">
+          <img src="https://m.media-amazon.com/images/I/61ZrlHx5tmL.jpg" alt="NES" class="w-full">
+          <p class="text-center mt-2 text-gray-300">Nintendo Entertainment System (NES)</p>
+        </div>
+        <div class="crt-frame">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Sega-Mega-Drive-JP-Mk1-Console-Set.jpg/250px-Sega-Mega-Drive-JP-Mk1-Console-Set.jpg" alt="Sega Genesis" class="w-full">
+          <p class="text-center mt-2 text-gray-300">Sega Mega Drive / Genesis</p>
+        </div>
+        <div class="crt-frame">
+          <img src="https://www.latercera.com/resizer/v2/HAEXKWWR2JAIHK7HKBM4CK6IR4.jpg?quality=80&smart=true&auth=d3d20920e9fdbb51bf509bf462354d89da5686770ab3423a0929a26120da8547&width=690&height=502" alt="SNES" class="w-full">
+          <p class="text-center mt-2 text-gray-300">Super Nintendo Entertainment System (SNES)</p>
+        </div>
+        <div class="crt-frame">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5MbMZ8Dyvy41O3iWwJIV-pz_QVnlFtkcnGA&s" alt="PSX" class="w-full">
+          <p class="text-center mt-2 text-gray-300">Sony PlayStation (PSX)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consejos útiles -->
+    <section>
+      <h2 class="text-3xl font-bold text-indigo-400 mb-4">💡 Consejos para coleccionistas</h2>
+      <ul class="list-disc list-inside text-gray-200 space-y-2">
+        <li>Guarda las cajas originales y los manuales: aumentan mucho el valor.</li>
+        <li>Evita la exposición directa a la luz solar y humedad.</li>
+        <li>Utiliza fundas protectoras para consolas y cartuchos.</li>
+        <li>Limpia los contactos con alcohol isopropílico para conservar funcionalidad.</li>
+        <li>Sigue foros y subastas especializadas como eBay o Wallapop Retro.</li>
+      </ul>
+    </section>
+
+    <!-- Test interactivo -->
+    <section>
+      <h2 class="text-3xl font-bold text-cyan-400 mb-4">🧪 ¿Qué tipo de coleccionista retro eres?</h2>
+      <form id="quizForm" class="space-y-4 text-gray-200">
+        <div>
+          <label class="block mb-2">1. ¿Qué valoras más en una consola retro?</label>
+          <select class="bg-gray-800 text-white px-4 py-2 rounded w-full">
+            <option>Su rareza</option>
+            <option>Su funcionalidad y estado</option>
+            <option>La nostalgia que me provoca</option>
+            <option>El diseño físico y empaque</option>
+          </select>
+        </div>
+        <div>
+          <label class="block mb-2">2. ¿Cuál de estos prefieres en tu estantería?</label>
+          <select class="bg-gray-800 text-white px-4 py-2 rounded w-full">
+            <option>Neo Geo AES</option>
+            <option>Nintendo 64</option>
+            <option>Sega Saturn</option>
+            <option>Famicom japonesa</option>
+          </select>
+        </div>
+        <div>
+          <label class="block mb-2">3. ¿Qué haces cuando consigues una nueva pieza?</label>
+          <select class="bg-gray-800 text-white px-4 py-2 rounded w-full">
+            <option>La documento y la guardo bajo llave</option>
+            <option>La conecto y juego</option>
+            <option>La muestro en mis redes</option>
+            <option>Le hago limpieza a fondo</option>
+          </select>
+        </div>
+        <div class="text-center">
+          <button type="button" onclick="mostrarResultado()" class="mt-4 bg-yellow-500 text-black px-6 py-2 rounded-full hover:bg-yellow-400 font-bold">Ver resultado</button>
+        </div>
+        <div id="resultadoTest" class="mt-6 text-center text-lg font-bold text-yellow-300"></div>
+      </form>
+    </section>
+
+    <!-- Botón de regreso -->
+    <div class="text-center pt-10">
+      <a href="index.html" class="bg-yellow-500 text-black px-6 py-3 rounded-full shadow-lg hover:bg-yellow-400 transition-all duration-300 font-bold uppercase">⬅️ Volver al Inicio</a>
+    </div>
+  </main>
+
+  <script>
+    function mostrarResultado() {
+      const mensajes = [
+        "🎖️ Eres un Guardián del Tiempo: valoras la historia y la rareza de cada pieza.",
+        "🎮 Eres un Jugador Clásico: amas revivir los juegos como en los viejos tiempos.",
+        "📸 Eres un Exhibicionista Retro: te encanta mostrar tu colección con orgullo.",
+        "🧼 Eres un Conservador Meticuloso: limpieza y estado impecable son tu prioridad."
+      ];
+      const resultado = mensajes[Math.floor(Math.random() * mensajes.length)];
+      document.getElementById("resultadoTest").textContent = resultado;
+    }
+  </script>
+</body>
+</html>

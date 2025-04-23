@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reseñas de Juegos Retro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .estrella {
+      font-size: 1.5rem;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .estrella:hover,
+    .estrella.hovered,
+    .estrella.seleccionada {
+      color: gold;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans px-6 py-10">
+  <header class="text-center mb-12">
+    <h1 class="text-5xl font-bold text-yellow-400 mb-2">Reseñas de Juegos Retro</h1>
+    <p class="text-xl text-gray-300">Opiniones y valoraciones de los clásicos que marcaron generaciones</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto space-y-12">
+
+    <!-- Reseña 1 -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-3xl font-bold text-pink-400">🎮 Pac-Man</h2>
+      <p class="text-lg text-gray-200 my-4">Lanzado en 1980, Pac-Man revolucionó los arcades con su jugabilidad adictiva y su personaje entrañable. Su diseño simple pero desafiante lo convirtió en un fenómeno cultural.</p>
+      <div class="text-yellow-400 mb-2">¿Te gustó? ¡Califícalo!</div>
+      <div class="flex items-center space-x-3" data-juego="pacman">
+        <div class="flex space-x-1">
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+        </div>
+        <button onclick="resetEstrellas(this)" class="text-sm bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded">Reiniciar</button>
+      </div>
+    </section>
+
+    <!-- Reseña 2 -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-3xl font-bold text-indigo-400">🧱 Tetris</h2>
+      <p class="text-lg text-gray-200 my-4">Tetris, creado por Alexey Pajitnov en 1984, es un icono de los videojuegos de lógica y reflejos. Su música, mecánica y progresión de dificultad lo han hecho inmortal.</p>
+      <div class="text-yellow-400 mb-2">¿Te gustó? ¡Califícalo!</div>
+      <div class="flex items-center space-x-3" data-juego="tetris">
+        <div class="flex space-x-1">
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+        </div>
+        <button onclick="resetEstrellas(this)" class="text-sm bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded">Reiniciar</button>
+      </div>
+    </section>
+
+    <!-- Reseña 3 -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-3xl font-bold text-red-400">🦇 Castlevania</h2>
+      <p class="text-lg text-gray-200 my-4">Castlevania, lanzado por Konami en 1986, mezcló acción, terror gótico y música inolvidable. Luchas contra Drácula, niveles no lineales y atmósfera oscura lo hicieron único.</p>
+      <div class="text-yellow-400 mb-2">¿Te gustó? ¡Califícalo!</div>
+      <div class="flex items-center space-x-3" data-juego="castlevania">
+        <div class="flex space-x-1">
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+          <span class="estrella">★</span>
+        </div>
+        <button onclick="resetEstrellas(this)" class="text-sm bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded">Reiniciar</button>
+      </div>
+    </section>
+
+    <!-- Botón de regreso -->
+    <div class="text-center pt-10">
+      <a href="index.html" class="bg-yellow-500 text-black px-6 py-3 rounded-full shadow-lg hover:bg-yellow-400 transition-all duration-300 font-bold uppercase">⬅️ Volver al Inicio</a>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.estrella').forEach(estrella => {
+      estrella.addEventListener('mouseenter', () => {
+        const estrellas = estrella.parentElement.children;
+        for (let i = 0; i < estrellas.length; i++) {
+          estrellas[i].classList.remove('hovered');
+          if (estrellas[i] === estrella || estrellas[i].previousElementSibling?.classList.contains('hovered')) {
+            estrellas[i].classList.add('hovered');
+          }
+        }
+      });
+
+      estrella.addEventListener('mouseleave', () => {
+        estrella.parentElement.querySelectorAll('.estrella').forEach(e => e.classList.remove('hovered'));
+      });
+
+      estrella.addEventListener('click', () => {
+        const estrellas = estrella.parentElement.children;
+        let marcado = false;
+        for (let i = 0; i < estrellas.length; i++) {
+          estrellas[i].classList.remove('seleccionada');
+          if (!marcado) {
+            estrellas[i].classList.add('seleccionada');
+          }
+          if (estrellas[i] === estrella) marcado = true;
+        }
+      });
+    });
+
+    function resetEstrellas(button) {
+      const estrellas = button.parentElement.querySelectorAll('.estrella');
+      estrellas.forEach(e => {
+        e.classList.remove('seleccionada');
+      });
+    }
+  </script>
+</body>
+
+</html>

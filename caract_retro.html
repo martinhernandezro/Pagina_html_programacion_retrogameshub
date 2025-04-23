@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Características de los Videojuegos Retro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animación de aparición */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out both;
+    }
+
+    .scanline {
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans relative overflow-x-hidden">
+  <!-- Efecto CRT Scanline -->
+  <div class="absolute inset-0 scanline z-50"></div>
+
+  <!-- Cabecera -->
+  <header class="text-center py-16 bg-black bg-opacity-60 relative z-10">
+    <h1 class="text-5xl font-extrabold text-yellow-400 mb-4 fade-in-up">Características de los Videojuegos Retro</h1>
+    <p class="text-xl text-gray-300 max-w-3xl mx-auto fade-in-up">Un viaje profundo a las claves que definieron la era dorada del videojuego clásico.</p>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="relative z-10 px-6 py-10 max-w-6xl mx-auto">
+
+    <!-- Sección 1 -->
+    <section class="mb-16 fade-in-up">
+      <h2 class="text-3xl font-bold text-indigo-400 mb-4">🎮 Gráficos Pixelados</h2>
+      <p class="text-lg text-gray-200 mb-4">Los gráficos pixel art fueron limitación y arte a la vez. Se construyeron mundos enteros con una paleta mínima de colores, pero con creatividad infinita. Muchos artistas actuales siguen adoptando este estilo por su belleza y nostalgia.</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img src="https://www.lcurtisboyle.com/nitros9/donkeykong1.gif" class="rounded shadow-lg hover:scale-105 transition duration-300" alt="Pixel Art 1">
+        <img src="https://www.researchgate.net/publication/312651324/figure/fig1/AS:616929593147393@1524098885875/screenshot-from-Street-Fighter-2-In-this-screenshot-Ryu-and-Ken-are-facing-off.png" class="rounded shadow-lg hover:scale-105 transition duration-300" alt="Pixel Art 2">
+        <img src="https://miarcade.com/wp-content/uploads/2023/03/space-invaders-arcade.png" class="rounded shadow-lg hover:scale-105 transition duration-300" alt="Pixel Art 3">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Centipede_arcade.png/220px-Centipede_arcade.png" class="rounded shadow-lg hover:scale-105 transition duration-300" alt="Pixel Art 4">
+      </div>
+    </section>
+
+    <!-- Sección 2 -->
+    <section class="mb-16 fade-in-up">
+      <h2 class="text-3xl font-bold text-pink-400 mb-4">🎵 Música Chiptune</h2>
+      <p class="text-lg text-gray-200 mb-4">Creada con chips de sonido de consolas antiguas, esta música es energética, nostálgica y pegadiza. Su estilo limitado dio lugar a composiciones memorables que aún hoy son remezcladas.</p>
+      <div class="flex flex-col sm:flex-row gap-6 items-center">
+        <iframe width="100%" height="200" class="rounded shadow-md" src="https://youtu.be/DLbtEMnkpLU?si=x_9IKZyfNigXkwCm" title="Chiptune Sample" frameborder="0" allowfullscreen></iframe>
+        <iframe width="100%" height="200" class="rounded shadow-md" src="https://youtu.be/3wt9x7O1VbQ?si=s8-UgTDHB4XFXDgR" title="Game Boy Music" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Sección 3 -->
+    <section class="mb-16 fade-in-up">
+      <h2 class="text-3xl font-bold text-green-400 mb-4">⚔️ Jugabilidad Directa y Desafiante</h2>
+      <p class="text-lg text-gray-200">Sin tutoriales extensos ni ayudas automáticas, los juegos retro te lanzaban directo a la acción. Cada error enseñaba, y cada logro se sentía ganado. La dificultad era parte de la diversión.</p>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-gray-800 p-4 rounded shadow hover:scale-105 transition duration-300">
+          <h3 class="text-xl font-bold text-yellow-300 mb-2">Permadeath y Vidas Limitadas</h3>
+          <p>Un solo fallo podía significar empezar desde cero. Esta mecánica obligaba a aprender patrones, dominar controles y pensar con precisión.</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded shadow hover:scale-105 transition duration-300">
+          <h3 class="text-xl font-bold text-yellow-300 mb-2">Recompensa por Memoria y Destreza</h3>
+          <p>Los jugadores eran desafiados a mejorar constantemente, dominando niveles, enemigos y mecánicas a base de repetición.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 4 -->
+    <section class="mb-16 fade-in-up">
+      <h2 class="text-3xl font-bold text-red-400 mb-4">📜 Narrativas Simples pero Icónicas</h2>
+      <p class="text-lg text-gray-200">Aunque muchos juegos retro tenían historias básicas (rescatar a la princesa, salvar el mundo), lograban dejar una huella duradera gracias a su atmósfera, personajes y carisma.</p>
+      <blockquote class="italic border-l-4 border-red-500 pl-4 text-gray-300 mt-4">“It's dangerous to go alone! Take this.” – The Legend of Zelda</blockquote>
+    </section>
+
+    <!-- Botón de regreso -->
+    <div class="text-center mt-20">
+      <a href="retro_redescubre.html" class="btn bg-yellow-500 text-black px-6 py-3 rounded-full shadow-lg hover:bg-yellow-400 transition-all duration-300 font-bold uppercase">⬅️ Volver a la página anterior</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-10 bg-black bg-opacity-80 text-sm text-gray-400 relative z-10">
+    <p>&copy; 2025 Retro Explorers. Diseñado por Focus.</p>
+  </footer>
+</body>
+</html>
